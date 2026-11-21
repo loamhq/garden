@@ -4,7 +4,7 @@
 
 Your Loam in miniature. Open **Apps → Garden**, turn the island with one finger and pinch or scroll to zoom. Tap a plant or open **What grows here** to find its story.
 
-Garden uses the Loam plugin interfaces described in PLUGIN.md. It keeps growth observations and suggestions on the server. Its WebGL scene uses the bundled three.js r160 under the MIT license in assets/three-LICENSE. There is no client-side CDN or analytics.
+Garden uses the Loam plugin interfaces described in PLUGIN.md. It keeps growth observations and suggestions on the server. Its WebGL scene uses the three.js r160 source modules in assets/three, distributed under the MIT license in assets/three-LICENSE. The local modules match the upstream three@0.160.0 source with two editorial changes: the hex lookup table wraps across lines and the OffscreenCanvas fallback comment describes its result. There is no client-side CDN or analytics.
 
 The host starts server/main.py with Python 3. Run the model tests with `python3 -m unittest discover -s tests`. The agent tool speaks newline-delimited MCP on stdin and gets the agent identity from its lane.
 

@@ -79,8 +79,9 @@ def snapshot(action=None, body=None):
 
 
 FILES = {"/plants.js": ("page/plants.js", "text/javascript"), "/": ("assets/index.html", "text/html"), "/island.js": ("assets/island.js", "text/javascript"),
-         "/guide.js": ("assets/guide.js", "text/javascript"), "/garden.css": ("assets/garden.css", "text/css"),
-         "/three.min.js": ("assets/three.min.js", "text/javascript")}
+         "/guide.js": ("assets/guide.js", "text/javascript"), "/garden.css": ("assets/garden.css", "text/css")}
+for module in (ROOT / "assets/three").rglob("*.js"):
+    FILES["/" + module.relative_to(ROOT / "assets").as_posix()] = (module.relative_to(ROOT), "text/javascript")
 
 
 class Handler(BaseHTTPRequestHandler):

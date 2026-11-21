@@ -3,7 +3,7 @@ id: garden
 name: Garden
 description: See what you and your agents have made growing together on a little island.
 author: Loam HQ
-version: 0.1.0
+version: 0.1.1
 api: 0
 kind: [app, extension]
 icon: assets/icon.svg

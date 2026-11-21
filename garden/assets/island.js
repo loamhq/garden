@@ -1,3 +1,5 @@
+import * as THREE from './three/garden.js'
+
 export function drawIsland(data, showCard, dark) {
   const R3 = new THREE.WebGLRenderer({ antialias: true, alpha: true })
   const nativeRatio = Math.min(devicePixelRatio, 1.5)
