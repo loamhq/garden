@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,viewport-fit=cover"
+    />
+    <title>Garden</title>
+    <link rel="stylesheet" href="garden.css" />
+  </head>
+  <body>
+    <div id="scene"></div>
+    <p id="hint" role="status">Opening your garden…</p>
+    <div id="card" aria-live="polite">
+      <b></b><span></span><br /><a hidden>Open</a>
+    </div>
+    <button id="gbtn" aria-expanded="false" aria-controls="guide">
+      <svg viewBox="0 0 16 16">
+        <path
+          d="M8 14.5V8M8 8C8 4.5 5.5 3 2.5 3 2.5 6 4.5 8 8 8ZM8 10c0-2.6 2-4.2 5.5-4.2C13.5 8.4 11.500 10 8 10Z"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.4"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        /></svg
+      >What grows here
+    </button>
+
+    <section id="guide" role="dialog" aria-labelledby="guide-title" inert>
+      <button id="gx" aria-label="Close guide">×</button>
+      <h2 id="guide-title">What grows here</h2>
+      <div id="grows"></div>
+    </section>
+    <script src="three.min.js"></script>
+    <script type="module" src="guide.js"></script>
+  </body>
+</html>

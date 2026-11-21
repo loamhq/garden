@@ -1,0 +1,114 @@
+.garden-line {
+  --garden-surface: var(--paper-card, var(--paper-page, Canvas));
+  --garden-ink: var(--paper-card-ink, var(--paper-ink, CanvasText));
+  --garden-grass: #86b356;
+  display: flex;
+  align-items: center;
+  container-type: inline-size;
+  margin: 3px 10px 8px;
+  padding-inline: 5px 2px;
+  border: 1px solid var(--paper-rule, transparent);
+  border-radius: 8px;
+  background-color: var(--garden-surface);
+  background-image: linear-gradient(rgba(134, 179, 86, .18), rgba(134, 179, 86, .18));
+  background: color-mix(in srgb, var(--garden-grass) 18%, var(--garden-surface));
+  color: var(--garden-ink);
+}
+.garden-news,
+.garden-close {
+  border: 0;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  border-radius: inherit;
+}
+.garden-news {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex: 1;
+  min-width: 0;
+  min-height: 56px;
+  padding: 2px 0;
+  text-align: start;
+}
+.garden-island {
+  display: inline-flex;
+  flex: none;
+  width: 48px;
+  height: 48px;
+}
+.garden-tallies {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 3px 8px;
+}
+.garden-tally {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  white-space: nowrap;
+  font-size: 13px;
+  line-height: 15px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+.garden-kind {
+  position: relative;
+  display: inline-flex;
+}
+.garden-kind svg {
+  width: 30px;
+  height: 30px;
+}
+.garden-kind svg,
+.garden-island svg {
+  filter: drop-shadow(0 1px 1px rgb(26 48 28 / 16%));
+}
+.garden-tally.changed {
+  color: color-mix(in srgb, var(--signal-crema, currentColor) 65%, var(--garden-ink));
+  font-weight: 750;
+}
+@supports not (color: color-mix(in srgb, red, blue)) {
+  .garden-tally.changed > :last-child {
+    text-decoration: underline;
+    text-decoration-color: var(--signal-crema, currentColor);
+    text-underline-offset: 2px;
+  }
+}
+.garden-agent {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  min-width: 13px;
+  height: 13px;
+  line-height: 13px;
+  text-align: center;
+  border-radius: 50%;
+  color: #fff;
+  background: #93473a;
+  font: 600 10px/13px Georgia, serif;
+}
+.garden-close {
+  flex: none;
+  width: 38px;
+  min-height: 44px;
+  padding: 0;
+  font-size: 18px;
+}
+@container (max-width: 500px) {
+  .garden-news.dense {
+    gap: 4px;
+  }
+  .garden-news.dense .garden-tallies {
+    flex: 1;
+    justify-content: space-around;
+    column-gap: 1px;
+  }
+  .garden-news.dense .garden-tally {
+    flex-direction: column;
+    gap: 0;
+  }
+}
